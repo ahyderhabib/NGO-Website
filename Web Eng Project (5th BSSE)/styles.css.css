@@ -1,0 +1,270 @@
+/* ===========================
+   HopeForward NGO — Stylesheet
+   =========================== */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: Arial, sans-serif; color: #333; background-color: #f9f9f9; }
+
+/* ── NAVBAR ─────────────────────────────────────────────────────── */
+nav {
+  background-color: #2e7d32;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+nav .logo { color: white; font-size: 22px; font-weight: bold; text-decoration: none; }
+nav ul { list-style: none; display: flex; gap: 18px; }
+nav ul li a { color: white; text-decoration: none; font-size: 15px; }
+nav ul li a:hover { text-decoration: underline; }
+
+.admin-nav-btn {
+  background-color: #fff;
+  color: #2e7d32;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.admin-nav-btn:hover { background-color: #e8f5e9; }
+
+/* ── ADMIN OVERLAY ──────────────────────────────────────────────── */
+#admin-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.65);
+  z-index: 9999;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  overflow-y: auto;
+}
+#admin-overlay.show { display: flex; }
+
+#admin-box {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 20px 40px 20px;
+  position: relative;
+}
+#admin-box h2 {
+  color: #2e7d32;
+  font-size: 22px;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 8px;
+}
+.close-admin {
+  position: absolute;
+  top: 14px; right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+  background: none;
+  border: none;
+}
+.close-admin:hover { color: #333; }
+
+#admin-login-screen h3 { font-size: 17px; color: #444; margin-bottom: 14px; }
+#admin-login-screen input {
+  width: 100%; padding: 10px;
+  border: 1px solid #ccc; border-radius: 5px;
+  font-size: 15px; margin-bottom: 12px;
+}
+#admin-login-screen button {
+  background-color: #2e7d32; color: white;
+  padding: 10px 24px; border: none;
+  border-radius: 5px; font-size: 15px; cursor: pointer;
+}
+#admin-login-screen button:hover { background-color: #1b5e20; }
+#admin-login-err { color: red; font-size: 14px; margin-top: 8px; }
+
+#admin-panel-screen { display: none; }
+
+.logout-btn {
+  background: #e53935; color: white;
+  border: none; padding: 7px 16px;
+  border-radius: 5px; font-size: 13px;
+  cursor: pointer; margin-bottom: 16px;
+}
+.logout-btn:hover { background: #b71c1c; }
+
+.admin-section {
+  margin-bottom: 22px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 18px;
+}
+.admin-section h3 { color: #1b5e20; font-size: 16px; margin-bottom: 12px; }
+.admin-section label {
+  font-size: 13px; color: #555;
+  display: block; margin-bottom: 3px; margin-top: 8px;
+}
+.admin-section input,
+.admin-section textarea {
+  width: 100%; padding: 8px;
+  border: 1px solid #ccc; border-radius: 4px;
+  font-size: 14px; font-family: Arial, sans-serif;
+}
+.admin-section textarea { height: 70px; resize: vertical; }
+
+.admin-save-btn {
+  background-color: #2e7d32; color: white;
+  border: none; padding: 9px 20px;
+  border-radius: 5px; font-size: 14px;
+  cursor: pointer; margin-top: 12px;
+}
+.admin-save-btn:hover { background-color: #1b5e20; }
+.admin-ok { color: #2e7d32; font-size: 13px; font-weight: bold; margin-top: 6px; }
+
+.program-admin-item {
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+/* ── HERO ───────────────────────────────────────────────────────── */
+#home { background-color: #c8e6c9; text-align: center; padding: 80px 20px; }
+#home h1 { font-size: 38px; color: #1b5e20; margin-bottom: 14px; }
+#home p { font-size: 17px; max-width: 600px; margin: 0 auto 24px auto; color: #444; line-height: 1.6; }
+#home a {
+  background-color: #2e7d32; color: white;
+  padding: 12px 28px; text-decoration: none;
+  border-radius: 5px; font-size: 16px;
+}
+#home a:hover { background-color: #1b5e20; }
+
+/* ── GENERIC SECTIONS ───────────────────────────────────────────── */
+section { padding: 60px 30px; max-width: 1000px; margin: 0 auto; }
+section h2 {
+  font-size: 28px; color: #2e7d32;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 6px;
+}
+section p { font-size: 15px; line-height: 1.7; color: #555; margin-top: 10px; }
+
+/* ── ABOUT ──────────────────────────────────────────────────────── */
+#about .about-box {
+  background: white; border: 1px solid #ddd;
+  border-radius: 8px; padding: 24px; margin-top: 20px;
+}
+
+/* ── PROJECTS ───────────────────────────────────────────────────── */
+#projects .project-list { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+.project-card {
+  background: white; border: 1px solid #ddd;
+  border-radius: 8px; padding: 18px;
+  width: calc(50% - 10px);
+}
+.project-card h3 { color: #2e7d32; margin-bottom: 8px; }
+.project-card p { font-size: 14px; }
+
+/* ── PROGRAMS ───────────────────────────────────────────────────── */
+#programs .program-item {
+  background: #e8f5e9;
+  border-left: 4px solid #2e7d32;
+  padding: 14px 18px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.program-item h3 { color: #1b5e20; margin-bottom: 4px; }
+.program-item p { font-size: 14px; }
+
+/* ── TEAM ───────────────────────────────────────────────────────── */
+#team .team-grid { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+.team-card {
+  background: white; border: 1px solid #ddd;
+  border-radius: 8px; padding: 20px;
+  text-align: center; width: calc(33% - 14px);
+}
+.team-card .avatar {
+  width: 70px; height: 70px; border-radius: 50%;
+  background-color: #a5d6a7;
+  display: flex; align-items: center;
+  justify-content: center; font-size: 28px;
+  margin: 0 auto 12px auto;
+}
+.team-card h3 { color: #2e7d32; font-size: 16px; margin-bottom: 4px; }
+.team-card p { font-size: 13px; color: #777; margin-top: 0; }
+
+/* ── DONATION ───────────────────────────────────────────────────── */
+#donate { background-color: #e8f5e9; padding: 60px 30px; }
+#donate .donate-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+#donate h2 {
+  font-size: 28px; color: #2e7d32;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #2e7d32;
+  padding-bottom: 6px;
+}
+#donate p { font-size: 15px; margin: 12px 0 20px 0; color: #555; }
+.amount-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.amount-btn {
+  background: white; border: 2px solid #2e7d32;
+  color: #2e7d32; padding: 10px 22px;
+  border-radius: 5px; cursor: pointer;
+  font-size: 15px; font-weight: bold;
+}
+.amount-btn:hover, .amount-btn.selected { background-color: #2e7d32; color: white; }
+.donate-form input {
+  width: 100%; padding: 10px;
+  border: 1px solid #ccc; border-radius: 5px;
+  margin-bottom: 12px; font-size: 14px;
+}
+.donate-form button {
+  width: 100%; padding: 12px;
+  background-color: #2e7d32; color: white;
+  border: none; border-radius: 5px;
+  font-size: 16px; cursor: pointer;
+}
+.donate-form button:hover { background-color: #1b5e20; }
+#donate-msg { color: #2e7d32; font-weight: bold; margin-top: 10px; font-size: 15px; }
+
+/* ── CONTACT ────────────────────────────────────────────────────── */
+#contact .contact-wrapper { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+.contact-info { flex: 1; min-width: 220px; }
+.contact-info p { margin-bottom: 10px; font-size: 15px; }
+.contact-form { flex: 2; min-width: 280px; }
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 10px;
+  margin-bottom: 12px; border: 1px solid #ccc;
+  border-radius: 5px; font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+.contact-form textarea { height: 100px; resize: vertical; }
+.contact-form button {
+  background-color: #2e7d32; color: white;
+  padding: 11px 26px; border: none;
+  border-radius: 5px; font-size: 15px; cursor: pointer;
+}
+.contact-form button:hover { background-color: #1b5e20; }
+#contact-msg { color: #2e7d32; font-weight: bold; margin-top: 8px; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  background-color: #2e7d32; color: white;
+  text-align: center; padding: 24px 20px;
+  font-size: 14px; line-height: 1.8;
+}
+footer a { color: #a5d6a7; text-decoration: none; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 650px) {
+  .project-card, .team-card { width: 100%; }
+  nav ul { gap: 10px; }
+  nav ul li a { font-size: 13px; }
+}

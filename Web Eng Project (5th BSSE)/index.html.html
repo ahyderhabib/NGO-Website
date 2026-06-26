@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HopeForward NGO</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────────── -->
+  <nav>
+    <a href="#home" class="logo">🌿 HopeForward</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="admin-nav-btn" onclick="openAdmin()">🔐 Admin</button>
+  </nav>
+
+  <!-- ── ADMIN OVERLAY ──────────────────────────────────────────── -->
+  <div id="admin-overlay">
+    <div id="admin-box">
+      <button class="close-admin" onclick="closeAdmin()">✕</button>
+      <h2>🛠️ Admin Panel — HopeForward</h2>
+
+      <!-- Login Screen -->
+      <div id="admin-login-screen">
+        <h3>Enter the admin password to continue:</h3>
+        <input type="password" id="admin-pass" placeholder="Enter password..."
+               onkeydown="if(event.key==='Enter') adminLogin()" />
+        <button onclick="adminLogin()">Login</button>
+        <p id="admin-login-err"></p>
+      </div>
+
+      <!-- Panel Screen -->
+      <div id="admin-panel-screen">
+        <button class="logout-btn" onclick="adminLogout()">🚪 Logout</button>
+
+        <!-- Hero -->
+        <div class="admin-section">
+          <h3>✏️ Edit Hero Section</h3>
+          <label>Heading</label>
+          <input type="text" id="adm-hero-h" />
+          <label>Sub-text</label>
+          <textarea id="adm-hero-p"></textarea>
+          <br><button class="admin-save-btn" onclick="saveHero()">Save Changes</button>
+          <p class="admin-ok" id="hero-ok"></p>
+        </div>
+
+        <!-- About -->
+        <div class="admin-section">
+          <h3>✏️ Edit About Us</h3>
+          <label>Paragraph 1</label>
+          <textarea id="adm-about-1"></textarea>
+          <label>Paragraph 2</label>
+          <textarea id="adm-about-2"></textarea>
+          <br><button class="admin-save-btn" onclick="saveAbout()">Save Changes</button>
+          <p class="admin-ok" id="about-ok"></p>
+        </div>
+
+        <!-- Programs -->
+        <div class="admin-section">
+          <h3>✏️ Edit Upcoming Programs</h3>
+          <div id="adm-programs-list"></div>
+          <button class="admin-save-btn" onclick="savePrograms()">Save All Programs</button>
+          <p class="admin-ok" id="programs-ok"></p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="admin-section">
+          <h3>✏️ Edit Contact Information</h3>
+          <label>Address</label>
+          <input type="text" id="adm-address" />
+          <label>Phone</label>
+          <input type="text" id="adm-phone" />
+          <label>Email</label>
+          <input type="text" id="adm-cemail" />
+          <label>Office Hours</label>
+          <input type="text" id="adm-hours" />
+          <br><button class="admin-save-btn" onclick="saveContact()">Save Changes</button>
+          <p class="admin-ok" id="contact-info-ok"></p>
+        </div>
+
+      </div><!-- end panel screen -->
+    </div>
+  </div>
+
+  <!-- ── HERO ───────────────────────────────────────────────────── -->
+  <div id="home">
+    <h1 id="hero-heading">Making Lives Better, Together</h1>
+    <p id="hero-subtext">
+      HopeForward is a non-profit organization working to improve lives through
+      education, clean water, and community development programs.
+    </p>
+    <a href="#donate">Donate Now</a>
+  </div>
+
+  <!-- ── ABOUT ──────────────────────────────────────────────────── -->
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about-box">
+      <p id="about-p1">
+        HopeForward was founded in 2012 with a simple belief: every person
+        deserves a chance at a better life. We work in underserved communities
+        to provide food, clean water, education, and healthcare support.
+      </p>
+      <p id="about-p2" style="margin-top: 12px;">
+        Over the years, we have served more than <strong>15,000 families</strong>
+        across rural and urban areas. Our work is powered by volunteers,
+        generous donors, and a passionate team committed to real change.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── PREVIOUS PROJECTS ──────────────────────────────────────── -->
+  <section id="projects">
+    <h2>Previous Work &amp; Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>📚 School for All (2019)</h3>
+        <p>Built 3 primary schools in rural areas, providing free education to
+        over 800 children who had no access to schooling.</p>
+      </div>
+      <div class="project-card">
+        <h3>💧 Clean Water Drive (2020)</h3>
+        <p>Installed water filtration systems in 12 villages, giving more than
+        4,000 people access to safe drinking water.</p>
+      </div>
+      <div class="project-card">
+        <h3>🌾 Food Relief Program (2021)</h3>
+        <p>Distributed food packages to 2,500 families during the flood season,
+        partnering with local volunteers and businesses.</p>
+      </div>
+      <div class="project-card">
+        <h3>🏥 Free Medical Camp (2023)</h3>
+        <p>Organized 6 free medical camps where over 3,000 patients received
+        checkups, medicine, and health awareness sessions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── UPCOMING PROGRAMS ──────────────────────────────────────── -->
+  <section id="programs">
+    <h2>Upcoming Programs</h2>
+    <p>Here are our planned activities for the coming months. We welcome volunteers and donors!</p>
+    <div id="programs-container">
+      <div class="program-item">
+        <h3>📖 Literacy Campaign — June 2026</h3>
+        <p>A month-long literacy drive targeting women and children in 5 rural districts. Free books and study materials will be provided.</p>
+      </div>
+      <div class="program-item">
+        <h3>🌳 Tree Plantation Day — July 10, 2026</h3>
+        <p>Community event to plant 2,000 trees in partnership with local schools and the forestry department. Open to all volunteers.</p>
+      </div>
+      <div class="program-item">
+        <h3>💊 Health Awareness Walk — August 2026</h3>
+        <p>A public health walk and seminar focused on diabetes, hygiene, and mental health awareness. Free screenings available.</p>
+      </div>
+      <div class="program-item">
+        <h3>🎒 School Bag Drive — September 2026</h3>
+        <p>Collecting and distributing school bags, stationery, and uniforms for underprivileged children before the school year starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TEAM ───────────────────────────────────────────────────── -->
+  <section id="team">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="avatar">👩</div>
+        <h3>Dr. Ayesha Malik</h3>
+        <p>Founder &amp; Director</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👨</div>
+        <h3>Mr. Usman Khan</h3>
+        <p>Program Coordinator</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👩</div>
+        <h3>Ms. Fatima Noor</h3>
+        <p>Community Outreach</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👨</div>
+        <h3>Mr. Bilal Ahmed</h3>
+        <p>Finance Manager</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👩</div>
+        <h3>Ms. Zara Hussain</h3>
+        <p>Volunteer Coordinator</p>
+      </div>
+      <div class="team-card">
+        <div class="avatar">👨</div>
+        <h3>Mr. Hassan Raza</h3>
+        <p>Field Operations</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DONATION ───────────────────────────────────────────────── -->
+  <div id="donate">
+    <div class="donate-inner">
+      <h2>Support Our Cause</h2>
+      <p>Your donation, no matter how small, makes a real difference. Choose an amount or enter your own.</p>
+      <div class="amount-buttons">
+        <button class="amount-btn" onclick="selectAmount(this, '500')">Rs 500</button>
+        <button class="amount-btn" onclick="selectAmount(this, '1000')">Rs 1000</button>
+        <button class="amount-btn" onclick="selectAmount(this, '2500')">Rs 2500</button>
+        <button class="amount-btn" onclick="selectAmount(this, '5000')">Rs 5000</button>
+      </div>
+      <div class="donate-form">
+        <input type="text"   id="donor-name"   placeholder="Your Full Name" />
+        <input type="email"  id="donor-email"  placeholder="Your Email Address" />
+        <input type="number" id="donor-amount" placeholder="Enter Amount (Rs)" />
+        <button onclick="submitDonation()">Donate Now 💚</button>
+        <p id="donate-msg"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ─────────────────────────────────────────────────── -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p>📍 <strong>Address:</strong><br><span id="ci-address">House 45, Street 7, Model Town, Lahore</span></p>
+        <p>📞 <strong>Phone:</strong><br><span id="ci-phone">+92 300 1234567</span></p>
+        <p>📧 <strong>Email:</strong><br><span id="ci-email">info@hopeforward.org</span></p>
+        <p>🕘 <strong>Office Hours:</strong><br><span id="ci-hours">Mon – Fri, 9 AM to 5 PM</span></p>
+      </div>
+      <div class="contact-form">
+        <input type="text"  id="c-name"    placeholder="Your Name" />
+        <input type="email" id="c-email"   placeholder="Your Email" />
+        <input type="text"  id="c-subject" placeholder="Subject" />
+        <textarea           id="c-message" placeholder="Your Message..."></textarea>
+        <button onclick="submitContact()">Send Message</button>
+        <p id="contact-msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer>
+    <p>© 2025 HopeForward NGO. All rights reserved.</p>
+    <p>📍 Lahore, Pakistan &nbsp;|&nbsp; 📞 +92 300 1234567 &nbsp;|&nbsp; 📧 info@hopeforward.org</p>
+    <br>
+    <p style="color: #c8e6c9;">Developed by <strong>Ali Haider</strong> and <strong>Sana Ullah</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
